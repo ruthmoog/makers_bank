@@ -1,6 +1,5 @@
 class Bank
   def deposit(amount)
-    "Hello, World!"
   end
 
   def balance
