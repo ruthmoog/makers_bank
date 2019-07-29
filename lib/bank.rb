@@ -12,8 +12,7 @@ class Bank
   end
 
   def withdraw(amount)
-    @balance -= amount
-    add_to_log("#{formatted_date} || || #{format_currency(amount)} || #{format_currency(balance)}")
+    log_and_debit(amount)
   end
 
   def print_statement
@@ -45,6 +44,11 @@ class Bank
     @statement_log.each do |transaction|
       puts transaction
     end
+  end
+
+  def log_and_debit(amount)
+    @balance -= amount
+    add_to_log("#{formatted_date} || || #{format_currency(amount)} || #{format_currency(balance)}")
   end
 
 end
