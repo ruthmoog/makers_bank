@@ -3,6 +3,7 @@ class Bank
 
   def initialize
     @balance = 0.00
+    @statement_log = []
   end
 
   def deposit(amount)
@@ -14,6 +15,8 @@ class Bank
   end
 
   def print_statement
-    p "date || credit || debit || balance"
+    if @statement_log.empty?
+      p "date || credit || debit || balance" + "\n" + "#{Time.new.strftime("%d/%m/%Y")} || || || %0.2f" % [balance]
+    end
   end
 end

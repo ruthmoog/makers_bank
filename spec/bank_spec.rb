@@ -24,7 +24,8 @@ RSpec.describe "Bank" do
   context "when no interactions are made" do
     it "prints a blank statement" do
       bank = Bank.new
-      expect(bank.print_statement).to eq("date || credit || debit || balance")
+      today = Time.new.strftime("%d/%m/%Y")
+      expect(bank.print_statement).to eq("date || credit || debit || balance\n#{today} || || || 0.00")
     end
   end
 
