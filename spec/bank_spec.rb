@@ -21,4 +21,11 @@ RSpec.describe "Bank" do
       bank.balance } .from(5.00).to(-25.00)
   end
 
+  context "when no interactions are made" do
+    it "prints a blank statement" do
+      bank = Bank.new
+      expect(bank.print_statement).to eq("date || credit || debit || balance")
+    end
+  end
+
 end
