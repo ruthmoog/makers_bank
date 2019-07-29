@@ -8,7 +8,7 @@ class Bank
 
   def deposit(amount)
     @balance += amount
-    add_to_log("#{Time.new.strftime("%d/%m/%Y")} || %0.2f" % [amount] + " || || %0.2f" % [balance])
+    add_to_log("#{formatted_date} || %0.2f" % [amount] + " || || %0.2f" % [balance])
   end
 
   def withdraw(amount)
@@ -17,7 +17,7 @@ class Bank
 
   def print_statement
     if @statement_log.empty?
-      p "date || credit || debit || balance" + "\n" + "#{Time.new.strftime("%d/%m/%Y")} || || || %0.2f" % [balance]
+      p "date || credit || debit || balance" + "\n" + "#{formatted_date} || || || %0.2f" % [balance]
     else
       puts statement = "date || credit || debit || balance"
       @statement_log.each do |transaction|
@@ -28,6 +28,10 @@ class Bank
 
   def add_to_log(transaction_info)
     @statement_log << transaction_info
+  end
+
+  def formatted_date
+    Time.new.strftime("%d/%m/%Y")
   end
 
 end

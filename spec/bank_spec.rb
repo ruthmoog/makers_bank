@@ -21,7 +21,7 @@ RSpec.describe "Bank" do
       bank.balance } .from(5.00).to(-25.00)
   end
 
-  context "when no interactions are made" do
+  context "when no transactions are made" do
     it "prints a blank statement" do
       bank = Bank.new
       today = Time.new.strftime("%d/%m/%Y")
