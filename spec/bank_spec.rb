@@ -38,4 +38,12 @@ RSpec.describe "Bank" do
     end
   end
 
+  context "when a withdrawal has been made" do
+    it "the statement log is updated" do
+      bank = Bank.new
+      expect { bank.withdraw(10) } .to change { 
+        bank.statement_log.length } .from(0).to(1)
+    end
+  end
+
 end

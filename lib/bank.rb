@@ -13,6 +13,7 @@ class Bank
 
   def withdraw(amount)
     @balance -= amount
+    add_to_log("#{formatted_date} || || #{format_currency(amount)} || #{format_currency(balance)}")
   end
 
   def print_statement
