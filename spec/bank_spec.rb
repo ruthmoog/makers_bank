@@ -25,7 +25,16 @@ RSpec.describe "Bank" do
     it "prints a blank statement" do
       bank = Bank.new
       today = Time.new.strftime("%d/%m/%Y")
+
       expect(bank.print_statement).to eq("date || credit || debit || balance\n#{today} || || || 0.00")
+    end
+  end
+
+  context "when a deposit has been made" do
+    it "the statement log is updated" do
+      bank = Bank.new
+      expect { bank.deposit(10) } .to change { 
+        bank.statement_log.length } .from(0).to(1)
     end
   end
 
