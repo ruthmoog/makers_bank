@@ -73,7 +73,7 @@
       <tr>
         <td class="strong"><a href="#4afff47686ee84890b64a8ade0d76e03e80a15bc" class="src_link" title="spec/features/print_statement_spec.rb">spec/features/print_statement_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>28</td>
+        <td>29</td>
         <td>18</td>
         <td>18</td>
         <td>0</td>
@@ -449,7 +449,7 @@
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">    ) </code>
+          <code class="ruby">    )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
@@ -868,88 +868,88 @@
   <pre>
     <ol>
       
-        <li class="covered" data-hits="1" data-linenumber="1">
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># frozen_string_literal: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">require &#39;timecop&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">require &#39;bank&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">describe &#39;Print statement&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  before(:all) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    Timecop.freeze(Time.local(2012, 1,10))</code>
+          <code class="ruby">describe &#39;Print statement&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  before(:all) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;statement shows transactions&#39; do</code>
+          <code class="ruby">    Timecop.freeze(Time.local(2012, 1, 10))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">    bank = Bank.new</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    line_2 = &quot;14/01/2012 || || 500.00 || 2500.00&quot;</code>
+          <code class="ruby">  it &#39;statement shows transactions&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    line_3 = &quot;13/01/2012 || 2000.00 || || 3000.00&quot;</code>
+          <code class="ruby">    bank = Bank.new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    line_4 = &quot;10/01/2012 || 1000.00 || || 1000.00&quot;</code>
+          <code class="ruby">    line_ii = &#39;14/01/2012 || || 500.00 || 2500.00&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    line_iii = &#39;13/01/2012 || 2000.00 || || 3000.00&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank.deposit(1000)</code>
+          <code class="ruby">    line_iv = &#39;10/01/2012 || 1000.00 || || 1000.00&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -961,76 +961,82 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    Timecop.freeze(Date.today + 3)</code>
+          <code class="ruby">    bank.deposit(1000)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    bank.deposit(2000)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    Timecop.freeze(Date.today + 3)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    Timecop.freeze(Date.today + 1)</code>
+          <code class="ruby">    bank.deposit(2000)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank.withdraw(500)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">    </code>
+          <code class="ruby">    Timecop.freeze(Date.today + 1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">    expected = line_2, line_3, line_4</code>
+          <code class="ruby">    bank.withdraw(500)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    actual = bank.print_statement</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expected = line_ii, line_iii, line_iv</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(actual).to match expected</code>
+          <code class="ruby">    actual = bank.print_statement</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(actual).to match expected</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">end</code>

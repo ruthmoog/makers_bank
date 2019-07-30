@@ -29,7 +29,7 @@ class Bank
     @statement_log.unshift(transaction_info)
   end
 
-  def formatted_date
+  def format_date
     Time.new.strftime('%d/%m/%Y')
   end
 
@@ -39,7 +39,7 @@ class Bank
 
   def print_balance
     header = "date || credit || debit || balance\n"
-    body = "#{formatted_date} || || || #{format_currency(balance)}"
+    body = "#{format_date} || || || #{format_currency(balance)}"
     p header + body
   end
 
@@ -53,14 +53,14 @@ class Bank
   def log_and_debit(amount)
     @balance -= amount
     add_to_log(
-      "#{formatted_date} || || #{format_currency(amount)} || #{format_currency(balance)}"
-    ) 
+      "#{format_date} || || #{format_cash(amount)} || #{format_cash(balance)}"
+    )
   end
 
   def log_and_credit(amount)
     @balance += amount
     add_to_log(
-      "#{formatted_date} || #{format_currency(amount)} || || #{format_currency(balance)}"
+      "#{format_date} || #{format_cash(amount)} || || #{format_cash(balance)}"
     )
   end
 end
