@@ -53,14 +53,14 @@ class Bank
   def log_and_debit(amount)
     @balance -= amount
     add_to_log(
-      "#{format_date} || || #{format_cash(amount)} || #{format_cash(balance)}"
+      "#{format_date} || || #{format_currency(amount)} || #{format_currency(balance)}"
     )
   end
 
   def log_and_credit(amount)
     @balance += amount
     add_to_log(
-      "#{format_date} || #{format_cash(amount)} || || #{format_cash(balance)}"
+      "#{format_date} || #{format_currency(amount)} || || #{format_currency(balance)}"
     )
   end
 end
