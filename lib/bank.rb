@@ -26,7 +26,7 @@ class Bank
   end
 
   def add_to_log(transaction_info)
-    @statement_log << transaction_info
+    @statement_log.unshift(transaction_info)
   end
 
   def formatted_date
@@ -45,7 +45,7 @@ class Bank
 
   def print_log
     puts 'date || credit || debit || balance'
-    @statement_log.each do |transaction|
+    statement_log.each do |transaction|
       puts transaction
     end
   end
@@ -53,16 +53,14 @@ class Bank
   def log_and_debit(amount)
     @balance -= amount
     add_to_log(
-      "#{formatted_date} || || #{format_currency(amount)}
-       || #{format_currency(balance)}"
+      "#{formatted_date} || || #{format_currency(amount)} || #{format_currency(balance)}"
     ) 
   end
 
   def log_and_credit(amount)
     @balance += amount
     add_to_log(
-      "#{formatted_date} || #{format_currency(amount)} ||
-       || #{format_currency(balance)}"
+      "#{formatted_date} || #{format_currency(amount)} || || #{format_currency(balance)}"
     )
   end
 end
