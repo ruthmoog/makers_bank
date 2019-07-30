@@ -10,8 +10,7 @@ class Bank
   end
 
   def deposit(amount)
-    @balance += amount
-    add_to_log("#{formatted_date} || #{format_currency(amount)} || || #{format_currency(balance)}")
+    log_and_credit(amount)
   end
 
   def withdraw(amount)
@@ -39,8 +38,9 @@ class Bank
   end
 
   def print_balance
-    p "date || credit || debit || balance\n
-    #{formatted_date} || || || #{format_currency(balance)}"
+    header = "date || credit || debit || balance\n"
+    body = "#{formatted_date} || || || #{format_currency(balance)}"
+    p header + body
   end
 
   def print_log
@@ -54,6 +54,14 @@ class Bank
     @balance -= amount
     add_to_log(
       "#{formatted_date} || || #{format_currency(amount)}
+       || #{format_currency(balance)}"
+    ) 
+  end
+
+  def log_and_credit(amount)
+    @balance += amount
+    add_to_log(
+      "#{formatted_date} || #{format_currency(amount)} ||
        || #{format_currency(balance)}"
     )
   end
