@@ -38,3 +38,12 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+## Assumptions
+
+- The client's starting balance is 0
+- The client only deposits or withdraws integer values
+- If the client's balance drops below 0, the balance will be negative
+  - Possible feature: a negative balance incurs a charge
+  - Possible feature: a balance has a lower limit of 0
+- If the client prints a statement without having made transactions, the printed statement will show only the header and balance on the date of the print request
