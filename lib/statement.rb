@@ -2,15 +2,6 @@
 
 # Prints bank statements
 class Statement
-  # print a statement by:
-  ## formatting the head
-  ## getting the log
-  # ##if log is empty,
-  ### get the balance
-  ### format the balance
-  ## else format the log
-  # pass the result to the Bank
-
   def print(log)
     header = "date || credit || debit || balance\n"
     if log.empty?
