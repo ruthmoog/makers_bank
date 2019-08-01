@@ -24,15 +24,15 @@ RSpec.describe 'Bank' do
                                      } .from(5.00).to(-25.00)
   end
 
-  context 'when no transactions are made' do
-    it 'prints a blank statement' do
-      bank = Bank.new
-      today = Time.new.strftime('%d/%m/%Y')
+  # context 'when no transactions are made' do
+  #   xit 'prints a blank statement' do
+  #     bank = Bank.new
+  #     today = Time.new.strftime('%d/%m/%Y')
 
-      expected = "date || credit || debit || balance\n#{today} || || || 0.00"
-      expect(bank.print_statement).to eq(expected)
-    end
-  end
+  #     expected = "date || credit || debit || balance\n#{today} || || || 0.00"
+  #     expect(bank.print_statement).to eq(expected)
+  #   end
+  # end
 
   context 'when a deposit has been made' do
     it 'the statement log is updated' do

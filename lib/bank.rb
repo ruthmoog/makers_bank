@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Bank allows deposits, withdrawals, and print statement
+# Bank allows deposits, withdrawals
 class Bank
   attr_reader :balance, :statement_log
 
@@ -17,12 +17,8 @@ class Bank
     log_and_debit(amount)
   end
 
-  def print_statement
-    if @statement_log.empty?
-      print_balance
-    else
-      print_log
-    end
+  def print_statement(statement = Statement.new)
+    statement.print(statement_log)
   end
 
   def add_to_log(transaction_info)
@@ -35,19 +31,6 @@ class Bank
 
   def format_currency(transaction)
     format('%0.2f', transaction)
-  end
-
-  def print_balance
-    header = "date || credit || debit || balance\n"
-    body = "#{format_date} || || || #{format_currency(balance)}"
-    p header + body
-  end
-
-  def print_log
-    puts 'date || credit || debit || balance'
-    statement_log.each do |transaction|
-      puts transaction
-    end
   end
 
   def log_and_debit(amount)

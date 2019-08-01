@@ -24,6 +24,8 @@ describe 'Print statement' do
     expected = line_ii, line_iii, line_iv
     actual = bank.print_statement
 
+    p actual
+
     expect(actual).to match expected
   end
 end
